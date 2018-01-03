@@ -5,6 +5,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.session.data.redis.config.annotation.web.http.EnableRedisHttpSession;
 
+import com.zhuguang.jack.util.SpringContextUtil;
+
 /** 
  *  往期视频加小露老师QQ：1533922121
  *  Jack老师QQ： 2943489129
@@ -25,6 +27,7 @@ import org.springframework.session.data.redis.config.annotation.web.http.EnableR
 //@MapperScan("com.zhuguang.jack.dao")
 public class SpringBootSampleApplication {
     public static void main(String[] args) {
-        SpringApplication.run(SpringBootSampleApplication.class, args);
+        SpringContextUtil.setApplication(SpringApplication.run(SpringBootSampleApplication.class,
+                args));
     }
 }
